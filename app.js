@@ -9,13 +9,11 @@ const app = Vue.createApp({
       dice1Image: "dice-1.png",
       dice2Image: "dice-2.png",
       dice3Image: "dice-3.png",
-      betState: true,
+      cuocTai: true,
+      cuocXiu: false,
       betMoney: Number(0),
       outOfMoney: false,
       result: "Bắt đầu cược đi nào!",
-      taiAn: false,
-      xiuAn: false,
-      caiAn: false,
     };
   },
   computed: {
