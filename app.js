@@ -9,8 +9,7 @@ const app = Vue.createApp({
       dice1Image: "dice-1.png",
       dice2Image: "dice-2.png",
       dice3Image: "dice-3.png",
-      cuocTai: true,
-      cuocXiu: false,
+      picked: "Tài",
       betMoney: Number(0),
       outOfMoney: false,
       result: "Bắt đầu cược đi nào!",
@@ -137,19 +136,19 @@ const app = Vue.createApp({
         this.dice1 + this.dice2 + this.dice3 < 11
       ) {
         this.result = "Xỉu";
-        if (this.betState == true) {
-          this.money = Number(this.money) - Number(this.betMoney);
-        } else {
+        if (this.picked == "Xỉu") {
           this.money = Number(this.money) + Number(this.betMoney);
+        } else if (this.picked == "Tài") {
+          this.money = Number(this.money) - Number(this.betMoney);
         }
       } else if (
         this.dice1 + this.dice2 + this.dice3 > 10 &&
         this.dice1 + this.dice2 + this.dice3 < 18
       ) {
         this.result = "Tài";
-        if (this.betState == true) {
+        if (this.picked == "Tài") {
           this.money = Number(this.money) + Number(this.betMoney);
-        } else {
+        } else if (this.picked == "Xỉu") {
           this.money = Number(this.money) - Number(this.betMoney);
         }
       }
