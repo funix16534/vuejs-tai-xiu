@@ -107,6 +107,9 @@ const app = Vue.createApp({
     },
   },
   methods: {
+    makeMoney() {
+      this.money += 5000000;
+    },
     startBet() {
       this.betting = true;
     },
